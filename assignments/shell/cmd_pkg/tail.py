@@ -24,7 +24,7 @@ def tail(input,flag):
 		      for lines in list:
 			          f1.write(lines)
 	else:
-		      recorder=20
+		recorder=20
         	num=0
         	numLines=sum(1 for line in open(input))
        		f = open(input,'r')
@@ -40,10 +40,10 @@ def tailredirect(file1,file2):
         num=0
         numLines=sum(1 for line in open(file1))
         f1 = open(file1,'r')
-	      f2=open(file2,'w')
+	f2=open(file2,'w')
         for lines in f1:
                 num=num+1
-        if numLines-num<recorder:
+        	if numLines-num<recorder:
                         #f2=open(file2,'a')
                         f2.write(lines)
 def tailapp(file1,file2):
@@ -51,10 +51,10 @@ def tailapp(file1,file2):
         num=0
         numLines=sum(1 for line in open(file1))
         f1 = open(file1,'r')
-	      f2=open(file2,'a')
+	f2=open(file2,'a')
         for lines in f1:
                 num=num+1
-        	      if numLines-num<recorder:
+        	if numLines-num<recorder:
                         
                         f2.write(lines)
 
