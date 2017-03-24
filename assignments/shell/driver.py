@@ -6,7 +6,7 @@ Description:
 """
 def function(cmd,flag):
 			
-			            var = cmd.split(' ')
+			var = cmd.split(' ')
                 	if '>>' in cmd and var[0]=='cat'  : #redirect standard output to a file
                       		var=cmd.split(' ')
                         	file1=var[1]
@@ -14,13 +14,13 @@ def function(cmd,flag):
                         	t = threading.Thread(target=catapp,args=(var[1],var[3],))
                         	t.start()
                         	t.join()
-			            elif '>>' in cmd and var[0]=='history':
+			elif '>>' in cmd and var[0]=='history':
                         	var=cmd.split(' ')
                          	file1=var[2]
                          	t = threading.Thread(target=historyapp,args=(var[2],))
                          	t.start()
                          	t.join()
-			            elif '>>' in cmd and var[0]=='head':
+			elif '>>' in cmd and var[0]=='head':
                         	var=cmd.split(' ')
                          	file1=var[1]
                          	file2=var[3]
@@ -36,20 +36,20 @@ def function(cmd,flag):
                          	t = threading.Thread(target=grepapp,args=(var[1],var[2],var[4],))
                          	t.start()
                          	t.join()
-			            elif '>>' in cmd and var[0]=='sort':
+			elif '>>' in cmd and var[0]=='sort':
                        	 	var=cmd.split(' ')
                          	file1=var[1]
                          	file2=var[3]
                         	t = threading.Thread(target=sortapp,args=(var[1],var[3],))
                          	t.start()
                          	t.join()
-			            elif '>>' in cmd and var[0]=='tail':
+			elif '>>' in cmd and var[0]=='tail':
                         	var=cmd.split(' ')
                          	file1=var[1]
                          	file2=var[3]
                          	t = threading.Thread(target=tailapp,args=(var[1],var[3],))
-			 	                  t.start()
-			 	                  t.join()  
+			 	t.start()
+			 	t.join()  
 
                 	elif '>' in cmd and var[0]=='grep' :
                         	var=cmd.split(' ')
@@ -65,7 +65,7 @@ def function(cmd,flag):
                          	t = threading.Thread(target=historyredirect,args=(var[2],))
                          	t.start()
                          	t.join()
-	        	      elif '>' in cmd and var[0]=='sort':
+	       		elif '>' in cmd and var[0]=='sort':
                        	 	var=cmd.split(' ')
                          	file1=var[1]
                          	file2=var[3]
@@ -84,28 +84,27 @@ def function(cmd,flag):
                          	file1=var[1]
                          	file2=var[3]
                          	t = threading.Thread(target=tailredirect,args=(var[1],var[3],))
-			                  	t.start()
-			 	                  t.join()
-	        	      elif '>' in cmd and var[0]=='ls' and len(var) == 3:
-                        	file=var[2]
-			                  	print(var[0]) 
+			        t.start()
+			 	t.join()
+	       		elif '>' in cmd and var[0]=='ls' and len(var) == 3:
+                        	file=var[2] 
                          	t = threading.Thread(target=lsredirect,args=(var[0],file,flag,))
                          	t.start()
                          	t.join()
-			            elif '>' in cmd and var[0]=='ls' and len(var) == 4:
-				                  file=var[3]
+			elif '>' in cmd and var[0]=='ls' and len(var) == 4:
+				file=var[3]
                         	t = threading.Thread(target=lsredirect,args=(var[1],file,flag,))
                       		t.start()
                         	t.join()
-			            elif '>' in cmd and var[0]=='cat':
+			elif '>' in cmd and var[0]=='cat':
                         	var=cmd.split(' ')
                          	file1=var[1]
                          	file2=var[3]
                          	t = threading.Thread(target=catredirect,args=(var[1],var[3],))
-			 	                  t.start()
-			 	                  t.join()
+			 	t.start()
+			 	t.join()
 
-	        	      elif '<' in cmd and var[0]=='cat':
+	        	elif '<' in cmd and var[0]=='cat':
 	
         	                t = threading.Thread(target=cat,args=(var[2],flag,))
                         	t.start()
@@ -122,7 +121,7 @@ def function(cmd,flag):
                         	t.start()
                         	t.join()
                 	elif '<' in cmd and var[0]=='head':
-				                  var=cmd.split(' ')
+				var=cmd.split(' ')
                         	t = threading.Thread(target=head,args=(var[2],flag,))
                        		t.start()
                        		t.join()
@@ -132,8 +131,8 @@ def function(cmd,flag):
         	                t = threading.Thread(target=tail,args=(var[2],flag,))
                         	t.start()
                         	t.join()
-			            elif '<' in cmd and var[0]=='wc':
-				                  var=cmd.split(' ')
+			elif '<' in cmd and var[0]=='wc':
+				var=cmd.split(' ')
                         	t = threading.Thread(target=wc,args=(var[1],flag,))
                       		t.start()
                         	t.join()
@@ -144,7 +143,7 @@ def function(cmd,flag):
                         	t.join()
               		elif(var[0]=='mkdir'):
                         	t = threading.Thread(target=mkdir,args=(var[1],))
-				                  t.start()
+				t.start()
                         	t.join()
                 	elif(var[0]=='pwd'):
                         	t = threading.Thread(target=pwd)
@@ -166,7 +165,7 @@ def function(cmd,flag):
                 	elif(var[0]=='mv'):
                         	t = threading.Thread(target=mv,args=(var[1],var[2],))
                         	t.start()
-			            elif(var[0]=='rmdir'):
+			elif(var[0]=='rmdir'):
                         	t = threading.Thread(target=rmdir,args=(var[1],))
                         	t.start()
                         	t.join()
@@ -186,7 +185,7 @@ def function(cmd,flag):
                         	t = threading.Thread(target=wc,args=(var[1],flag,))
                       		t.start()
                         	t.join()
-			            elif(var[0]=='cat' and len(var)==5):
+			elif(var[0]=='cat' and len(var)==5):
                         	t = threading.Thread(target=concatination,args=(var[1],var[2],var[4],))
                         	t.start()
                         	t.join()
@@ -207,14 +206,14 @@ def function(cmd,flag):
                        		t.start()
                         	t.join()
                 	elif (var[0]=='who'):
-				                  t = threading.Thread(target=who)
+				t = threading.Thread(target=who)
                         	t.start()
                         	t.join()
                 	elif(var[0]=='sort'):
                         	t = threading.Thread(target=sort,args=(var[1],flag,))
                         	t.start()
                         	t.join()
-                  elif(var[0]=='less'):
+                  	elif(var[0]=='less'):
                         	t = threading.Thread(target=less,args=(var[1],))
                         	t.start()
                         	t.join()
