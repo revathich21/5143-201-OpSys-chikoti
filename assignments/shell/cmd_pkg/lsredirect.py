@@ -22,8 +22,8 @@ def lsredirect(var,file,flag):
         		        for i in list:
                 		    if i.startswith('.'):
                		 		      list.remove(i)
-        		 		            list.sort()
-        				   	 for i in list:
+        		 		      list.sort()
+        				      for i in list:
              					  f.write(i)
     else :
 	f=open(file,'w')
