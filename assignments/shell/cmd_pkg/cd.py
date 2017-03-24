@@ -19,10 +19,10 @@ def cd(directory):
 	      os.chdir(home)
 	      new=os.getcwd()            	
         print(new)
-	else:
-		  if os.path.isdir(directory):
-			    os.chdir(directory)
-			    new=os.getcwd()
-			    print(new)
-      else:
-			        print("directory does not exists")
+  else:
+	if os.path.isdir(directory):
+		os.chdir(directory)
+		new=os.getcwd()
+		print(new)
+       else:
+		print("directory does not exists")
